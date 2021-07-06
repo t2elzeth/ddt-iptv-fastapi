@@ -12,3 +12,11 @@ users = sa.Table(
     sa.Column("is_staff", sa.Boolean),
     sa.Column("is_superuser", sa.Boolean),
 )
+
+authtokens = sa.Table(
+    "authtokens",
+    metadata,
+    sa.Column("id", sa.Integer, primary_key=True),
+    sa.Column("user", sa.ForeignKey("users")),
+    sa.Column("token", sa.String),
+)

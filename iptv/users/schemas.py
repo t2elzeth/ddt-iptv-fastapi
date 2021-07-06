@@ -17,3 +17,13 @@ class CreateUser(BaseModel):
 class PatchUser(BaseModel):
     email: str
     is_active: bool
+
+
+class ShowAuthToken(BaseModel):
+    user: int
+    token: str
+
+
+class CreateAuthToken(BaseModel):
+    email: str
+    password: str
